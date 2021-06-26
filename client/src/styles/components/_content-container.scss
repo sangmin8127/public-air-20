@@ -1,0 +1,14 @@
+.content-container {
+  margin: 0 $xl-size;
+  padding: 0 $m-size;
+  max-width: 80rem;
+}
+
+.content-body {
+  background: #ede7f6;
+  margin: 30px 390px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}

@@ -14,7 +14,7 @@ class UpdateDB extends Component {
     }
 
     updateApi = async () => {
-        const response = await axios.post( '/airdata/update', { location: '강남구' } )
+        const response = await axios.post( '/airdata/update', { location: '종로구' } )
         return this.setState({updateStatus:response.data})
     }
 

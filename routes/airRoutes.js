@@ -9,13 +9,16 @@ module.exports = app => {
             // req.body.location
             await axdata( req.body.location, ( error, { airquality } = {} ) => {
                 if ( error ) {
+                    console.log('error', error)
                     return res.send( error )
                 }
-                Air.findOne( { time: airquality.time }, ( err, doc ) => {
+                console.log('airquality time + location', airquality.time, airquality.location)
+                Air.findOne( { time: airquality.time, location:airquality.location }, ( err, doc ) => {
                     const air = new Air( {
                         location, time, pm10, pm25, no2
                     } = airquality  )
                     if ( doc ) {
+                        console.log("Duplcate exists")
                         res.status(302).send( "Duplicate document exists" )
                     } else {
                         air.save()
@@ -27,6 +30,7 @@ module.exports = app => {
             res.status( 400 ).send( e )
         }
     })
+    
     app.get('/airdata/display', async (req, res) => {
         try {
             const airdata = await Air.find({})

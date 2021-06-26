@@ -15,7 +15,7 @@ export const fetchData = () => (
     }
 )
 
-// mongodb에서 데이터를 불러와 store에 dispatch
+// mongo data를 store에 dispatch
 export const addData = ( airdata ) => ({
     type: ADD_DATA,
     payload: airdata

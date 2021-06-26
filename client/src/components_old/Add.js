@@ -15,7 +15,7 @@ class Add extends Component {
         return (
             <div>
                 {/* <button onClick={ this.handleClick }>Add Data</button> */}
-                <Button variant="success" onClick={ this.handleClick }>Add Data</Button>{' '}
+                <Button variant="success" onClick={ this.handleClick }>Add Data</Button>
             </div>
         )
     }

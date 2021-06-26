@@ -2,7 +2,7 @@ import React from 'react'
 
 const Landing = () => {
     return (
-        <div className="heading-menu">
+        <div style={{ textAlign: 'center'}} >
             <h1>
                 AQI Data
             </h1>
