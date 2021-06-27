@@ -19,7 +19,7 @@ class App extends Component {
   render() {
     return (
       <div>
-          <div style={{margin:"0 auto", padding: "0 1.6rem", maxWidth: "80rem"}}>
+          <div style={{margin:"0 auto", padding: "0 1.6rem", maxWidth: "60rem"}}>
             <BrowserRouter>
                 <div>
                   <Header />

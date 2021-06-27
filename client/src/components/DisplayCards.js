@@ -1,5 +1,4 @@
 import React from 'react';
-// import { Col, Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { Col, Card, CardImg,
   CardTitle, ListGroup, ListGroupItem } from 'reactstrap';
 
@@ -16,8 +15,8 @@ const DisplayCards = ({ location, time, pm10, pm25, no2 }) => {
 
   
   return (
-    <Col sm="4">
-      <Card body style={{ width: '24rem', backgroundColor: bg  }} key={time.toString()}>
+    <Col sm="4" >
+      <Card body style={{ width: '18rem', backgroundColor: bg  }} key={time.toString()}>
           <CardImg src={cardImage} top width="100%"/>
               <CardTitle className="title text-center">{ location } 측정치</CardTitle>
           <ListGroup variant="flush">

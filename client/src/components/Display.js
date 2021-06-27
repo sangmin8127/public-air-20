@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-// import { Container, CardDeck } from 'react-bootstrap';
-import {
-    Container, Row
-  } from 'reactstrap';
+import { Container, Row } from 'reactstrap';
 import DisplayCards from './DisplayCards';
 
 class Display extends Component {
@@ -11,9 +8,9 @@ class Display extends Component {
     render () {
         return (
             <div>
-                <h1 className="title text-center">지역 공기 정보</h1>
-                <h4 className="title text-center">공기청정도 정보는 매시간마다 갱신됩니다. </h4>
-                <h5 className="source-align text-center">출처: 공공데이터포털</h5>
+                <h3 style={{textAlign:"center", marginTop: "0.5rem"}}>지역 공기 정보</h3>
+                <h5 className="title text-center">공기청정도 정보는 매시간마다 갱신됩니다. </h5>
+                <p className="source-align text-center">출처: 공공데이터포털</p>
                 <Container>
                     <Row>
                         {

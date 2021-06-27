@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import '../styles/styles.scss';
 
 class Header extends Component {
     renderContent () {
@@ -18,7 +17,7 @@ class Header extends Component {
     }
     render () {
         return (
-            <div style={{background: "#80cbc4", margin:"1.2rem, 0"}}>
+            <div style={{background: "#33FFD7", margin:"1.2rem, 0"}}>
              
                 <div style={{alignItems:"center", display:"flex", justifyContent:"space-between", padding:"0.6rem"}}>
 
@@ -28,7 +27,7 @@ class Header extends Component {
                     <Link to={ this.props.auth ? '/add' : '/' }>
                         <p>Add</p>
                     </Link>
-                    <p style={{color:"white", margin:'0'}}>AQI Information Site</p>
+                    <p style={{ margin:"0.2rem, 0"}}>AQI Information Site</p>
                     <p>{this.renderContent()}</p> 
                 </div>
             </div>

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { addData } from '../actions/index'
-import { Button } from 'react-bootstrap';
+import { Button } from 'reactstrap';
 
 // store에 mongodb에서 불러온 데이터를 dispatch해야 함. 
 class AddForm extends Component {
