@@ -19,7 +19,8 @@ class App extends Component {
   render() {
     return (
       <div>
-          <div style={{margin:"0 auto", padding: "0 1.6rem", maxWidth: "80rem"}}>
+        <header className="headeer">
+          <div className="content-container">
             <BrowserRouter>
                 <div>
                   <Header />
@@ -29,6 +30,7 @@ class App extends Component {
                 </div>
               </BrowserRouter>
             </div>
+          </header>
       </div>
     );
   }

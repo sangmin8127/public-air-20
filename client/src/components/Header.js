@@ -18,21 +18,19 @@ class Header extends Component {
     }
     render () {
         return (
-            <div>
-                <header className="header">
-                    <div className="content-container">
-                        <div className="header__content">
-                            <Link to={this.props.auth ?  '/display' : '/'}>
-                                <p>Display</p>
-                            </Link>
-                            <Link to={ this.props.auth ? '/add' : '/' }>
-                                <p>Add</p>
-                            </Link>
-                            <p className="header__title">AQI Information Site</p>
-                            <p>{this.renderContent()}</p> 
-                        </div>
-                    </div>
-                </header>
+            <div style={{background: "#80cbc4", margin:"1.2rem, 0"}}>
+             
+                <div style={{alignItems:"center", display:"flex", justifyContent:"space-between", padding:"0.6rem"}}>
+
+                    <Link to={this.props.auth ?  '/display' : '/'}>
+                        <p>Display</p>
+                    </Link>
+                    <Link to={ this.props.auth ? '/add' : '/' }>
+                        <p>Add</p>
+                    </Link>
+                    <p style={{color:"white", margin:'0'}}>AQI Information Site</p>
+                    <p>{this.renderContent()}</p> 
+                </div>
             </div>
         )
     }

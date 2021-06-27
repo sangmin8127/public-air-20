@@ -1,5 +1,7 @@
 import React from 'react';
-import { Col, Card, ListGroup, ListGroupItem } from 'react-bootstrap';
+// import { Col, Card, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Col, Card, CardImg,
+  CardTitle, ListGroup, ListGroupItem } from 'reactstrap';
 
 
 const DisplayCards = ({ location, time, pm10, pm25, no2 }) => {
@@ -9,18 +11,15 @@ const DisplayCards = ({ location, time, pm10, pm25, no2 }) => {
   // const graySky = "images/polluted-air.jpg"
 
   const cardImage = pm25 <= 35 ? clearSky : graySky
-  const bg = pm25 <= 35 ? "primary" : "secondary"
+  const bg = pm25 <= 35 ? '#33FFD7': "#808080"
+
+
   
   return (
-    <Col className="container-fluid mt-4">
-      <Card bg={bg} border="primary" style={{ width: '18rem' }} key={time.toString()}>
-          <Card.Img variant="top" src={cardImage} />
-          <Card.Body>
-              <Card.Header>{ location } 측정치</Card.Header>
-              <Card.Text>
-                공기청정도 정보는 매시간마다 갱신됩니다. 
-              </Card.Text>
-          </Card.Body>
+    <Col sm="4">
+      <Card body style={{ width: '24rem', backgroundColor: bg  }} key={time.toString()}>
+          <CardImg src={cardImage} top width="100%"/>
+              <CardTitle className="title text-center">{ location } 측정치</CardTitle>
           <ListGroup variant="flush">
             <ListGroupItem> { time } </ListGroupItem>
             <ListGroupItem>pm10: { pm10 } ㎍/m³</ListGroupItem>
@@ -28,7 +27,7 @@ const DisplayCards = ({ location, time, pm10, pm25, no2 }) => {
             <ListGroupItem>no2: { no2 } ㎍/m³</ListGroupItem>
           </ListGroup>
       </Card>
-      </Col>
+    </Col>
   )
 }
 
