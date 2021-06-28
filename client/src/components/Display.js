@@ -8,7 +8,7 @@ class Display extends Component {
     render () {
         return (
             <div>
-                <h3 style={{textAlign:"center", marginTop: "0.5rem"}}>지역 공기 정보</h3>
+                <h3 style={{textAlign:"center", marginTop: "0.5rem"}}>서울시 공기 정보</h3>
                 <h5 className="title text-center">공기청정도 정보는 매시간마다 갱신됩니다. </h5>
                 <p className="source-align text-center">출처: 공공데이터포털</p>
                 <Container>
