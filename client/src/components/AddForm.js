@@ -12,6 +12,7 @@ class AddForm extends Component {
     state = {
         dataFetched:false,
         dataUpdated: false,
+        dataStatus: "",
         location: '',
         error: ""
     }
@@ -24,9 +25,9 @@ class AddForm extends Component {
         e.preventDefault();
         try {
             const response = await axios.post( '/airdata/update', { location: this.state.location } )
-            return this.setState({ dataUpdated: true, location:""})
+            return this.setState({ dataUpdated: true, dataStatus: "Data updated! Click Update Button.",location:""})
         } catch ( err ) {
-            return this.setState({datapdated: false, error: "data not updated"})
+            return this.setState({datapdated: false, dataStatus:"No data to update!" ,error: "data not updated"})
         }
     }
     
@@ -39,8 +40,17 @@ class AddForm extends Component {
         }
         return this.setState({dataFetched: false})
     }
+
+    renderUpdate (){
+        if (this.state.dataUpdated){
+            return <span style={{color:"blue"}}>{this.state.dataStatus}</span>
+        } else {
+            return <span style={{color:"red"}}>{this.state.dataStatus}</span>
+        }
+    }
  
     render () {
+
         return (
             <div style={{marginTop: "1rem"}}>
                 <Form onSubmit={this.onUpdateSubmit}>
@@ -50,13 +60,12 @@ class AddForm extends Component {
                     <Input onChange={ this.onLocationChange } Input/>
                     <br></br>
                     <p>UpdateDB Status:
-                        <span > { this.state.dataUpdated ? "Data updated! Click Add Button." : "No data to update!" }</span>
+                        {this.renderUpdate()}
                     </p>
-                   
                     {
                         this.state.dataFetched === false ? 
                         <Link to={'/display'}>
-                            <Button color="primary" onClick={this.onAddClick} >Add Data</Button>{' '}
+                            <Button color="primary" onClick={this.onAddClick} >Update Data</Button>{' '}
                         </Link>
                         : ""
                     }
