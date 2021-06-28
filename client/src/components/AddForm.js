@@ -27,7 +27,7 @@ class AddForm extends Component {
             const response = await axios.post( '/airdata/update', { location: this.state.location } )
             return this.setState({ dataUpdated: true, dataStatus: "Data updated! Click Update Button.",location:""})
         } catch ( err ) {
-            return this.setState({datapdated: false, dataStatus:"No data to update!" ,error: "data not updated"})
+            return this.setState({datapdated: false, dataStatus:"No data to update!" , error: "data not updated"})
         }
     }
     
@@ -35,10 +35,10 @@ class AddForm extends Component {
         const res = await axios.get('/airdata/display')
         const airdata = res.data
         if(airdata){
-            this.setState( { dataFetched:true, location:" " } );
+            this.setState( { dataFetched:true, location:"" } );
             return this.props.addData(airdata);
         }
-        return this.setState({dataFetched: false})
+        return this.setState({dataFetched: false, dataStatus:"Loading......"})
     }
 
     renderUpdate (){
