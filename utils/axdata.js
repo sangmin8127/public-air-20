@@ -37,5 +37,5 @@ const axdata = async (stationName, callback) => {
   } catch (error) {
     console.log('error broke out:  ', error) 
   }  
-
+}
 module.exports = axdata;
