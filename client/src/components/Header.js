@@ -16,6 +16,7 @@ class Header extends Component {
         }
     }
     render () {
+        console.log("from Header this.props.auth", this.props.auth)
         return (
             <div style={{background: "#33FFD7", margin:"1.2rem, 0"}}>
              
