@@ -1,10 +1,11 @@
+const requireLogin  = require('../middlewares/requireLogin')
 const mongoose = require('mongoose')
 const Air = mongoose.model('airs')
 
 const axdata = require( '../utils/axdata' )
 
 module.exports = app => {
-    app.post( '/airdata/update', async ( req, res ) => {
+    app.post( '/airdata/update', requireLogin, async ( req, res ) => {
         try {
             // req.body.location
             await axdata( req.body.location, ( error, { airquality } = {} ) => {
@@ -31,7 +32,7 @@ module.exports = app => {
         }
     })
     
-    app.get('/airdata/display', async (req, res) => {
+    app.get('/airdata/display', requireLogin, async (req, res) => {
         try {
             const airdata = await Air.find({})
             res.send(airdata)
