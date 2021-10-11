@@ -65,7 +65,7 @@ class AddForm extends Component {
                     {
                         this.state.dataFetched === false ? 
                         <Link to={'/display'}>
-                            <Button color="primary" onClick={this.onAddClick} >Update Data</Button>{' '}
+                            <Button color="primary" onClick={this.onAddClick} >Update Data</Button>
                         </Link>
                         : ""
                     }
