@@ -2,22 +2,23 @@ import React from 'react';
 import { Col, Card, CardImg,
   CardTitle, ListGroup, ListGroupItem } from 'reactstrap';
 
-
 const DisplayCards = ({ location, time, pm10, pm25, no2 }) => {
   
   const clearSky = 'images/clean-air.jpeg'
-  const graySky = "images/foul-air.jpeg"
-  // const graySky = "images/polluted-air.jpg"
+  const graySky = "images/dirty_air.jpeg"
+  const perplexed = "images/perplexed.jpeg"
 
-  const cardImage = pm25 <= 35 ? clearSky : graySky
-  const bg = pm25 <= 35 ? '#33FFD7': "#808080"
-
-
+  
+  let cardImage =  (pm25 <= 25 || pm10 <=55) ? clearSky : graySky
+  if (pm10 ==="-" || pm25 ==="-"){
+    cardImage = perplexed
+  }
+  const bg = (pm10 !== "-" || pm25 !== "-") && pm25 <= 35 ? '#a2eaf8': "#dbd8e3"
   
   return (
     <Col sm="4" >
       <Card body style={{ width: '18rem', backgroundColor: bg  }} key={time.toString()}>
-          <CardImg src={cardImage} top width="100%"/>
+          <CardImg className="card-image-resizing" src={cardImage} top width="100%"/>
               <CardTitle className="title text-center">{ location } 측정치</CardTitle>
           <ListGroup variant="flush">
             <ListGroupItem> { time } </ListGroupItem>
