@@ -1,4 +1,5 @@
 node_modules
 /config/dev.js
+/urlsKeys/key.js
 .env.development
 .env.production
