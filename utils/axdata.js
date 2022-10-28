@@ -1,6 +1,6 @@
 const axios = require('axios');
-const serviceKey = require( '../urlsKeys/key' )
-const aqiUrl = require('../urlsKeys/url')
+const serviceKey = require( '../urls/key' )
+const aqiUrl = require('../urls/url')
 
 const axdata = async (stationName, callback) => {
   
